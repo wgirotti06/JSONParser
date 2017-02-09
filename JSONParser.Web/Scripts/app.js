@@ -10,4 +10,4 @@ app.upload = function () {
         return;
     }
     uploadForm.submit();
-}
+};
