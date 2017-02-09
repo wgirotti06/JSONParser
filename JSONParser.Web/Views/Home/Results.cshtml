@@ -1,0 +1,25 @@
+﻿@model List<JSONParser.Model.container>
+
+<h1>Results</h1>
+
+<p class="lead">The sum of labeled items' IDs for each menu object:</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Menu Index</th>
+            <th>Menu Header</th>
+            <th>Labeled Item Sum</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var container in Model)
+        {
+            <tr>
+                <td>@Model.IndexOf(container)</td>
+                <td>@container.menu.header</td>
+                <td>@container.sum</td>
+            </tr>
+        }
+    </tbody>
+</table>

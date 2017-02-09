@@ -1,0 +1,88 @@
+﻿<div id="upload" class="row">
+
+    <h1>Upload Menu File</h1>
+
+    <p class="lead">
+        Use the input below to upload your menu structure in JSON format.
+        Once the file has been selected, click Upload to have the application return the sum of labeled items' IDs for each menu object listed.
+    </p>
+
+    @using (Html.BeginForm("Results", "Home", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+    {
+        <div class="form-group">
+            <input type="file" name="file" class="form-control" />
+        </div>
+        <input type="button" class="btn btn-primary" value="Upload" onclick="app.upload();" />
+    }
+
+    <p>
+        The .json file should have the following structure:
+    </p>
+
+    <pre>
+        [
+            {
+                "menu":{
+                    "header":"menu",
+                    "items":[
+                        {
+                            "id":27
+                        },
+                        {
+                            "id":0,
+                            "label":"Label 0"
+                        },
+                        null,
+                        {
+                            "id":93
+                        },
+                        {
+                            "id":85
+                        },
+                        {
+                            "id":54
+                        },
+                        null,
+                        {
+                            "id":46,
+                            "label":"Label 46"
+                        }
+                    ]
+                }
+            },
+            {
+                "menu":{
+                    "header":"menu",
+                    "items":[
+                        {
+                            "id":81
+                        }
+                    ]
+                }
+            },
+            {
+                "menu":{
+                    "header":"menu",
+                    "items":[
+                        {
+                            "id":70,
+                            "label":"Label 70"
+                        },
+                        {
+                            "id":85,
+                            "label":"Label 85"
+                        },
+                        {
+                            "id":93,
+                            "label":"Label 93"
+                        },
+                        {
+                            "id":2
+                        }
+                    ]
+                }
+            }, ...
+        ]
+    </pre>
+
+</div>
