@@ -23,3 +23,21 @@
         }
     </tbody>
 </table>
+
+<h1>Visualization</h1>
+
+@foreach (var container in Model)
+{
+    <div class="dropdown" style="display:inline-block;margin:5px;">
+        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            @container.menu.header (Sum = @container.sum)
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            @foreach (var item in container.menu.items)
+            {
+                <li><a href="#" style="@(string.IsNullOrEmpty(item.label) ? "text-decoration:line-through" : "")">@(string.IsNullOrEmpty(item.label) ? "No Label" : item.label): @item.id</a></li>
+            }
+        </ul>
+    </div>
+}
